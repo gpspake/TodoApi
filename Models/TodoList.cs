@@ -1,10 +1,9 @@
 using System.Collections.Generic;
 
-public class TodoItem
+public class TodoList
 {
     public long Id { get; set; }
     public string Name { get; set; }
-    public bool IsComplete { get; set; }
     
-    public long TodoListId { get; set; }
+    public virtual ICollection<TodoItem> TodoItems { get; set; }
 }

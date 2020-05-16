@@ -9,6 +9,7 @@ namespace TodoApi.Models
         {
         }
 
-        public DbSet<TodoItem> TodoItems { get; set; }
+        public virtual DbSet<TodoItem> TodoItems { get; set; }
+        public virtual DbSet<TodoList> TodoLists { get; set; }
     }
 }
