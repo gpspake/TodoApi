@@ -4,3 +4,11 @@ services:
     build: .
     ports:
       - "8000:80"
+  db:
+    image: postgres
+    environment:
+      SA_PASSWORD: "Password123"
+      ACCEPT_EULA: "Y"
+      POSTGRES_PASSWORD: "DbPassword123"
+    ports:
+      - "5432:5432"
