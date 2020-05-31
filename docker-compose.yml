@@ -4,11 +4,11 @@ services:
     build: .
     ports:
       - "8000:80"
+    environment:
+      - ConnectionStrings__DefaultConnection=Server=${TODOLIST_DB_SERVER};Port=${TODOLIST_DB_PORT};Database=${TODOLIST_DB_NAME};Username=${TODOLIST_DB_USER};Password=${TODOLIST_DB_PASSWORD};
   db:
     image: postgres
     environment:
-      SA_PASSWORD: "Password123"
-      ACCEPT_EULA: "Y"
-      POSTGRES_PASSWORD: "DbPassword123"
+      POSTGRES_PASSWORD: ${TODOLIST_POSTGRES_PASSWORD}
     ports:
       - "5432:5432"
